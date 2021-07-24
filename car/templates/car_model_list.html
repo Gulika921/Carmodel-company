@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-4">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="col-4">
+    {% now "jS F Y H:i" as date_now %}
+    <h3>{{date_now}}</h3>
+  </div>
+  <div class="col-4">
+    <a class="btn btn-primary" href="{% url 'car_model-create' %}">Create</a>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Company</th>
+    </tr>
+  </thead>
+  {% for carmodel in carmodel_list %}
+    <tbody>
+      <tr>
+        <th scope="row"><a href="/car_model/{{carmodel.id}}">{{carmodel.name}}</a></th>
+        <td>{{carmodel.company}}</td>
+      </tr>
+    <tbody>
+  {% endfor %}
+</table>
+{% endblock content%}
