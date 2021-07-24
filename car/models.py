@@ -4,14 +4,9 @@ from django.urls import reverse
 # Create your models here.
 
 
-class CommonInfo(models.Model):
+class Car(models.Model):
+
     name = models.CharField(max_length=100)
-
-    class Meta:
-        abstract = True
-
-
-class Car(CommonInfo):
     vin_number = models.CharField(max_length=100)
     car_model = models.ForeignKey(
         "car.CarModel",
@@ -35,7 +30,9 @@ class Car(CommonInfo):
         ordering = ["car_model"]
 
 
-class CarModel(CommonInfo):
+class CarModel(models.Model):
+
+    name = models.CharField(max_length=100)
     company = models.ForeignKey("car.Company", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
@@ -48,7 +45,9 @@ class CarModel(CommonInfo):
         ordering = ["name"]
 
 
-class Company(CommonInfo):
+class Company(models.Model):
+
+    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
@@ -59,3 +58,14 @@ class Company(CommonInfo):
     class Meta:
         verbose_name_plural = "Companies"
         ordering = ["name"]
+
+    """
+    Или можно так:
+    class CommonInfo(models.Model):
+    name = models.CharField(max_length=100)
+    class Meta:
+        abstract = True
+    
+    Передаем вместо 'models.Model' 'CommonInfo' и убираем 
+    name = models.CharField(max_length=100) в каждом
+    """
