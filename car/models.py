@@ -66,6 +66,6 @@ class Company(models.Model):
     class Meta:
         abstract = True
     
-    Передаем вместо 'models.Model' 'CommonInfo' и убираем 
+    Заменяем 'models.Model' на 'CommonInfo' и убираем 
     name = models.CharField(max_length=100) в каждом
     """
