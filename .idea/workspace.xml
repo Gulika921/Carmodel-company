@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56f52ca4-0fdd-4374-ae76-0de03bd6e2e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/car/migrations/0009_auto_20210727_1747.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/car/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car/templates/car_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/car/templates/car_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car/templates/car_model_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/car/templates/car_model_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car/templates/car_model_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/car/templates/car_model_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
