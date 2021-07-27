@@ -42,7 +42,7 @@ class CarModel(models.Model):
         return reverse('car_model-detail', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["company"]
 
 
 class Company(models.Model):
