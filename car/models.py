@@ -58,14 +58,3 @@ class Company(models.Model):
     class Meta:
         verbose_name_plural = "Companies"
         ordering = ["name"]
-
-    """
-    Или можно так:
-    class CommonInfo(models.Model):
-    name = models.CharField(max_length=100)
-    class Meta:
-        abstract = True
-    
-    Передаем вместо 'models.Model' 'CommonInfo' и убираем 
-    name = models.CharField(max_length=100) в каждом
-    """

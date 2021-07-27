@@ -1,6 +1,8 @@
 {% extends "base.html" %}
-
+{% block extra_css %}
+{% endblock extra_css %}
 {% block content %}
+
 <div class="row">
   <div class="col-4">
     <h1>{{title}}</h1>
@@ -13,6 +15,10 @@
     <a class="btn btn-primary" href="{% url 'car_model-create' %}">Create</a>
   </div>
 </div>
+{% regroup carmodel_list by company as company_list %}
+{% for company in company_list %}
+<h1>{{company.grouper}}</h1>
+
 <table class="table">
   <thead>
     <tr>
@@ -20,13 +26,14 @@
       <th scope="col">Company</th>
     </tr>
   </thead>
-  {% for carmodel in carmodel_list %}
+  {% for carmodel in company.list %}
     <tbody>
       <tr>
         <th scope="row"><a href="/car_model/{{carmodel.id}}">{{carmodel.name}}</a></th>
         <td>{{carmodel.company}}</td>
       </tr>
+      {% endfor %}
     <tbody>
-  {% endfor %}
 </table>
+{% endfor %}
 {% endblock content%}
